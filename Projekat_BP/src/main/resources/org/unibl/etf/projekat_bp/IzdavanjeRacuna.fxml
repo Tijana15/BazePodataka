@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="426.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.unibl.etf.projekat_bp.controllers.IzdavanjeRacunaKontroler">
+   <children>
+      <ImageView fitHeight="484.0" fitWidth="761.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@PozadinaIzdavanjeRacuna.png" />
+         </image>
+      </ImageView>
+      <ChoiceBox fx:id="kasaChoiceBox" layoutX="24.0" layoutY="28.0" onMouseClicked="#onIzaberiIDKase" prefHeight="1.0" prefWidth="173.0" />
+      <ChoiceBox fx:id="nalogChoiceBox" layoutX="23.0" layoutY="81.0" onMouseClicked="#onIzaberiIDNaloga" prefHeight="26.0" prefWidth="174.0" />
+      <Text fill="#890b76" layoutX="24.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Izaberite ID kase na kojoj se izdaje račun">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="#890b76" layoutX="24.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Izaberite ID naloga radnika koji će izdati račun">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="#890b76" layoutX="24.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unesite način plaćanja">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Text>
+      <TableView fx:id="artikliTableView" layoutX="24.0" layoutY="130.0" prefHeight="200.0" prefWidth="236.0" style="-fx-background-color: lightpurple;">
+         <columns>
+            <TableColumn fx:id="nazivColumn" text="Naziv" />
+            <TableColumn fx:id="idColumn" text="ID" />
+            <TableColumn fx:id="cijenaColumn" prefWidth="75.20001220703125" text="Cijena" />
+         </columns>
+      </TableView>
+      <Button fx:id="dodajUKorpuButton" layoutX="294.0" layoutY="212.0" mnemonicParsing="false" onAction="#onDodajUKorpu" onMouseClicked="#onDodajUKorpu" text="Dodaj u korpu" textFill="#7b087a">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Button>
+      <TableView fx:id="korpaTableView" layoutX="431.0" layoutY="130.0" prefHeight="200.0" prefWidth="243.0" style="-fx-background-color: lightpurple;">
+         <columns>
+            <TableColumn fx:id="korpaIdColumn" text="ID" />
+            <TableColumn fx:id="korpaCijenaColumn" text="Cijena" />
+            <TableColumn fx:id="korpaKolicinaColumn" text="Količina" />
+         </columns>
+      </TableView>
+      <Button fx:id="kreirajButton" layoutX="603.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#kreirajRacun" prefHeight="15.0" prefWidth="89.0" style="-fx-background-color: beige;" text="Kreiraj" textFill="#7b087a">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="fieldNacinPlacanja" layoutX="24.0" layoutY="369.0" />
+   </children>
+</AnchorPane>
